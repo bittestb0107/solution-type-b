@@ -7,6 +7,8 @@ public class Main {
 		int a = 10;
 		int b = 10;
 		
+		int retry = 0;
+		
 		String bridge = "";
 		
 		for(int i = 0; i < 20; i++) {
@@ -23,6 +25,8 @@ public class Main {
 			
 			
 		}
+		long start = System.currentTimeMillis();
+			
 		System.out.println(")");
 		System.out.println(bridge);
 		
@@ -33,13 +37,31 @@ public class Main {
 		int rand = (int)(Math.random() * 4) + 1;
 		num = num + rand;
 		
+		System.out.println("1. " + rand);
+		System.out.println(bridge);
+		
+		for(int i = 0; i < num; i++) {
+			System.out.print(" ");
+		}
+		System.out.println("^");
+		
 		if(bridge.charAt(num) == '#') {
 			System.out.println("! ~");
+			num = 0;
+			retry++;
+			continue;
+		}
+		
+		if(num > bridge.length()) {
 			break;
 		}
 		
 		
 		}
+		long end = System.currentTimeMillis();
+		
+		String time = (( end - start )/1000.0 +"초");
+		
 	}
 
 }

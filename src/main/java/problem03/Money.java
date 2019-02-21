@@ -15,7 +15,7 @@ public class Money {
 	
 	@Override
 	public int hashCode() {
-		return 1;
+		return amount;
 	}
 
 	
@@ -25,25 +25,21 @@ public class Money {
 
 	public Money add(Money money) {
 		this.amount = this.amount + money.amount;
-		money.amount = this.amount;
-		return money;
+		return this;
 	}
 
 	public Money minus(Money money) {
 		this.amount = this.amount - money.amount;
-		money.amount = this.amount;
-		return money;
+		return this;
 	}
 
 	public Money multiply(Money money) {
 		this.amount = this.amount * money.amount;
-		money.amount = this.amount;
-		return money;
+		return this;
 	}
 
 	public Money devide(Money money) {
 		this.amount = this.amount / money.amount;
-		money.amount = this.amount;
-		return money;
+		return this;
 	}
 }
